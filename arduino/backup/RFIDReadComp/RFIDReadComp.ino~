@@ -5,7 +5,7 @@
 
 
 int  val = 0; 
-char code[11]; 
+char code[10]; 
 int bytesread = 0; 
 
 #include <SD.h>
@@ -16,7 +16,7 @@ void setup() {
 
 Serial.begin(2400); // RFID reader SOUT pin connected to Serial RX pin at 2400bps 
 
-Serial.print("Initializing SD card...");
+Serial.pring("Initializing SD card...");
 pinMode(10, OUTPUT);
 
 if (!SD.begin(4)) {
@@ -44,8 +44,6 @@ digitalWrite(2, LOW);                  // Activate the RFID reader
           bytesread++;                   // ready to read next digit  
         } 
       } 
-      code[10]='\0';
-      
       if(bytesread == 10) {              // if 10 digit read is complete 
         Serial.print("TAG code is: ");   // possibly a good TAG 
         Serial.println(code);            // print the TAG code 
@@ -57,32 +55,22 @@ digitalWrite(2, LOW);                  // Activate the RFID reader
 	if (myFile) {
 	   Serial.println("KEYLIST.TXT:");
 	   
-	   while (myFile.available()){
-	     foo = myFile.readBytesUntil('\n', fbuffer, 20);
-	     fbuffer[foo] = '\0';
-	     Serial.write("Bytes read: ");
-	     Serial.write(fbuffer);
+	   while (myFile.readBytesUntil('\n', fbuffer, 20);
+	   fbuffer[foo] = '\0';
+	   Serial.write("Bytes read: ");
+	   Serial.write(fbuffer);
 
-	     if (strncmp(code, fbuffer, 10) == 0 ) {
-	         Serial.write("  THE ONE!!!!\r\n");
-		 break;
-	     }
-	     else {
-	     	  Serial.write("  You lose");
-	     }
-	     Serial.write("\r\n");
+	   if (strncmp(code, fbuffer, 10) == 0 ) {
+	       Serial.write("  THE ONE!!!!");
 	   }
+	   Serial.write("\r\n");
         }
-	else {
-	     Serial.println("error opening file");
-	}
-	
 	// close the file:
 	myFile.close();
-      }
+      } 
 
       
-    
+      } 
       bytesread = 0; 
       digitalWrite(2, HIGH);                  // deactivate the RFID reader for a moment so it will not flood
            delay(1500);                       // wait for a bit 
@@ -92,4 +80,4 @@ digitalWrite(2, LOW);                  // Activate the RFID reader
 } 
 
 // extra stuff
-// digitalWrite(2, HIGH);             // deactivate RFID reader 
+// digitalWrite(2, HIGH);             // deactivate RFID reader 0

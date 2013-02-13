@@ -1,3 +1,4 @@
+#include <Arduino.h>
 
 // RFID reader for Arduino 
 // Wiring version by BARRAGAN <http://people.interaction-ivrea.it/h.barragan> 
@@ -92,4 +93,4 @@ digitalWrite(2, LOW);                  // Activate the RFID reader
 } 
 
 // extra stuff
-// digitalWrite(2, HIGH);             // deactivate RFID reader 
+// digitalWrite(2, HIGH);             // deactivate RFID reader 0

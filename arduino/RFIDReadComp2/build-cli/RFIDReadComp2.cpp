@@ -1,3 +1,4 @@
+#include <Arduino.h>
 
 // RFID reader for Arduino
 // Wiring version by BARRAGAN <http://people.interaction-ivrea.it/h.barragan>

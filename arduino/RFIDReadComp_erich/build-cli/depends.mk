@@ -1,4 +1,4 @@
-build-cli/RFIDReadComp2.o: build-cli/RFIDReadComp2.cpp \
+build-cli/RFIDReadComp.o: build-cli/RFIDReadComp.cpp \
  /usr/share/arduino/hardware/arduino/cores/arduino/Arduino.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/binary.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/WCharacter.h \
